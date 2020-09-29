@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPDATE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        body{
+            margin: 0%;
+            padding: 0%;
+            background-image: url(/img/bl.jpg);    
+            font-family: Libre Baskerville;
+        }
+        .input-group
+        {
+            width: 30%;
+            margin-top: 50px;
+            margin-left: 37%;
+            
+        }
+              
+         .btn
+         {
+            margin-left: 37%;
+            margin-top: 1%;
+            width: 30%;
+            color: chartreuse;
+         }
+         a{
+             text-decoration: none;
+             color: whitesmoke;
+         }
+         a:hover{
+             color: yellow;
+             text-decoration: none;
+         }
+    </style>
+</head>
+<body>
+    <form method="POST" action="/users/update">
+        <div class="input-group mb-3" style="margin-top: 13%;">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">ID</span>
+            </div>
+            <input type="text" class="form-control" aria-label="ID" aria-describedby="basic-addon1" name="t10" required value="<%=data[0]._id%>">
+          </div>
+          <div class="input-group mb-3" style="margin-top: 2%;">
+            <div class="input-group-prepend" >
+              <span class="input-group-text" id="basic-addon1">NAME</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Name" aria-describedby="basic-addon1" name="t1" required value="<%=data[0].name%>">
+          </div>
+          <div class="input-group mb-3" style="margin-top: 2%;">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">EMAIL</span>
+            </div>
+            <input type="email" class="form-control" aria-label="Email" aria-describedby="basic-addon1" name="t2" required value="<%=data[0].email%>"></div>
+            <div class="input-group mb-3" style="margin-top: 2%;">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">PASSWORD</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Email" aria-describedby="basic-addon1" name="t3" required value="<%=data[0].pwd%>"></div>
+                <button type="submit" class="btn btn-outline-warning" style="background-color:crimson; font-weight: bolder;"><i class="fa fa-pencil fa-2x" aria-hidden="true" style="margin-left: -2.8%;position: absolute;margin-top:-0.3% ;"></i>UPDATE</button>
+           
+    
+         
+ 
+</form>
+</body>
+</html>

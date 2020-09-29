@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>List</title>
+    <style>
+        body{
+            
+            background:linear-gradient(grey,white);
+            padding-left: 18%;
+            background-repeat:no-repeat ;
+        }
+        th
+        {
+            height: 40px;
+            font-size: 150%;
+            color:black;
+            text-decoration: underline;
+            font-family: cursive;
+        }
+        
+    </style>
+    <script>
+        function fu(i)
+        {
+            let conf=confirm('Are you Sure?')
+            if(conf)
+            {
+                location.replace(`/users/del/?id=${i}`)
+            }
+        }
+    </script>
+</head>
+<body>
+    <table style="width: 80%;border-style: solid; text-align: center;" border="1">
+        <thead>
+            <tr>
+                <th style="height:10%;">ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Edit</th>
+                <th>Delete</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <%if (data.length >0){ %>
+            <% data.forEach(function(row){ %>
+                <tr>
+                    <td><%= row._id %></td>
+                    <td><%= row.name %></td>
+                    <td><%= row.email %></td>
+                    <td><%= row.pwd %></td>
+                    <td><a href="/users/edit/?id=<%= row._id %>"><i class='fa fa-edit' style='font-size:36px;color:black'></i></a></td>
+                    <td><i class="fa fa-trash-o" style="font-size:36px;color:black" onclick="fu('<%=row._id%>')"></i></td>
+                </tr>
+            <% })}else{ %>
+            <tr>
+                <td colspan="6">NO Record Found</td>
+            </tr>
+            <% } %>
+        </tbody>
+    </table>
+</body>
+</html>
